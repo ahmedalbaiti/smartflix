@@ -1,15 +1,12 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'csv'
 
-RSpec.describe 'index route', type: :system do
-  it 'shows page content' do
-    visit '/'
-    expect(page).to have_content('Dick Johnson Is Dead')
-    expect(page).to have_content('Blood & Water')
-    expect(page).to have_content('Ganglands')
-    expect(page).to have_content('Jailbirds New Orleans')
-    expect(page).to have_content('Midnight Mass')
-    expect(page).to have_content('Sankofa')
+RSpec.describe 'shows/index.html.haml', type: :view do
+  it 'shows list of first 10 shows' do
+    assign :shows, @shows = CSV.parse(File.read('lib/netflix_titles.csv'), headers: true).first(10)
+    render
+    @shows.each { |show| expect(rendered).to have_content(show["title"]) }   
   end
 end
