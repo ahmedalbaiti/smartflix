@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
-gem 'sass-rails'
 gem 'bootstrap', '~> 5.2.2'
+gem 'sass-rails'
 
 gem 'haml'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
