@@ -1,3 +1,12 @@
-- @shows.each do |show|
-	%h1= show["title"]
-	%h3= show["type"]
+%h3 Smartflix 
+%h6 Find out more about your favorite movies.
+.row.row-cols-md-6.row-cols-sm-4
+ - @shows.each do |show|
+  .col.mb-4 
+   .card
+    %img.card-img-top{alt: "Show poster", src: "https://via.placeholder.com/150"}
+    .card-body
+     %h6.card-title= show["title"] 
+     %h6.card-subtitle= show["type"] 
+     %h6.card-subtitle.m-1= "(#{show["release_year"]})" 
+     %p.card-text= show["description"]
