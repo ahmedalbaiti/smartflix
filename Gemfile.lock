@@ -54,6 +54,8 @@ GEM
     activerecord (7.0.4)
       activemodel (= 7.0.4)
       activesupport (= 7.0.4)
+    activerecord-import (1.4.1)
+      activerecord (>= 4.2)
     activestorage (7.0.4)
       actionpack (= 7.0.4)
       activejob (= 7.0.4)
@@ -143,6 +145,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+    pg (1.4.5)
     popper_js (2.11.6)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -242,7 +245,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.3-arm64-darwin)
     stimulus-rails (1.1.1)
       railties (>= 6.0.0)
     temple (0.9.1)
@@ -277,6 +279,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  activerecord-import
   bootsnap
   bootstrap (~> 5.2.2)
   capybara
@@ -284,6 +287,7 @@ DEPENDENCIES
   haml
   importmap-rails
   jbuilder
+  pg
   pry-byebug
   puma (~> 4.3)
   rails (~> 7.0.4)
@@ -292,7 +296,6 @@ DEPENDENCIES
   sass-rails
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
